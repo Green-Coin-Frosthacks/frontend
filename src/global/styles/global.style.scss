@@ -1,0 +1,89 @@
+@use "../abstracts/input";
+@use "../abstracts/button";
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+
+:root {
+  /* ===== 🎨 COLORS ===== */
+
+  /* Primary */
+  --color-primary-500: #2ecc71;
+  --color-primary-600: #27ae60;
+  --color-primary-100: #e9f7ef;
+  --color-primary-200: #ccd6d0;
+  --color-primary-300: #9da29f;
+  --color-primary-glow: rgba(46, 204, 113, 0.6);
+
+  /* Accent */
+  --color-accent-500: #f1c40f;
+  --color-accent-glow: rgba(241, 196, 15, 0.6);
+
+  /* Neutral */
+  --color-neutral-0: #ffffff;
+  --color-neutral-100: #f5f6fa;
+  --color-neutral-700: #636e72;
+  --color-neutral-900: #2d3436;
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.121);
+  --glass-border: rgba(255, 255, 255, 0.169);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+
+
+  /* ===== 📝 TEXT ===== */
+
+  --text-primary: var(--color-neutral-900);
+  --text-secondary: var(--color-neutral-700);
+  --text-muted: #8e9a9c;
+  /* precomputed (lighten) */
+  --text-inverse: var(--color-neutral-0);
+
+  --text-success: var(--color-primary-500);
+  --text-accent: var(--color-accent-500);
+
+
+  /* ===== 📏 SPACING ===== */
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 0.75rem;
+  --space-lg: 1rem;
+  --space-xl: 1.5rem;
+  --space-2xl: 2rem;
+  --space-3xl: 3rem;
+
+  /* Shadows */
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  --border-primary: 1px solid var(--color-primary-300);
+  --border-secondary: 1px solid rgba(37, 37, 37, 0.288);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  background: var(--color-neutral-100);
+  color: var(--text-primary);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-link {
+  color: var(--color-primary-500);
+}
