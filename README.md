@@ -171,69 +171,134 @@ flowchart TD
 
 ---
 
-### Student Dashboard Flow
+## Student Dashboard Flow
 
-```mermaid
-flowchart TD
-    A[Student logs in] --> B[/users - Student Dashboard]
-    B --> C[Fetch: User profile + points]
-    B --> D[Fetch: Waste chart - last 7 days]
-    B --> E[Fetch: Leaderboard ranking]
-    C --> F[Display: Points balance, daily waste, rank]
-    D --> G[Display: Bar chart of daily waste in grams]
-    E --> H[Display: Position on leaderboard]
-
-    B --> I[Student navigates to...]
-    I --> J[/users/marketplace - Browse products]
-    J --> K[Select a product to buy]
-    K --> L{Enough points?}
-    L -->|No| M[Show insufficient points message]
-    L -->|Yes| N[Confirm purchase]
-    N --> O[Backend: Blockchain transfer + DB deduction]
-    O --> P[Points deducted, order saved]
-
-    I --> Q[/users/profile - View profile]
-    Q --> R{Wallet connected?}
-    R -->|No| S[Connect MetaMask button shown]
-    S --> T[MetaMask popup: Connect wallet]
-    T --> U[Wallet address saved to profile]
-    R -->|Yes| V[Show wallet address + GC balance]
-```
+### 1. Student Login
+- Student logs in  
+- Redirected to **Student Dashboard (`/users`)**
 
 ---
 
-### Admin Dashboard Flow
+### 2. Dashboard Overview
+- Fetches:
+  - User profile and points  
+  - Waste chart (last 7 days)  
+  - Leaderboard ranking  
 
-```mermaid
-flowchart TD
-    A[Admin logs in] --> B[/ - Admin Dashboard]
-    B --> C[Fetch: Total waste weight all time]
-    B --> D[Fetch: College waste chart - last 7 days]
-    B --> E[Fetch: All notifications / security alerts]
-
-    B --> F[Admin navigates to...]
-    F --> G[/user-management - All Students]
-    G --> H[View student list with roll numbers, points, UID status]
-    H --> I[Click student → /user-management/:id]
-    I --> J[See student's individual waste chart]
-    I --> K[Assign RFID card UID to student]
-    I --> L[Promote to admin or delete account]
-
-    F --> M[/bin - Dustbin Monitor]
-    M --> N[View each bin: name, capacity, current fill level]
-    N --> O[Visual fill percentage indicator]
-
-    F --> P[/marketplace - Product Management]
-    P --> Q[View all products in the store]
-    Q --> R[Add new product with image + price in points]
-    Q --> S[Delete existing product]
-
-    F --> T[/transactions - Transaction Log]
-    T --> U[Filter by type: reward or purchase]
-    T --> V[See tx hash, wallet, amount, status]
-```
+- Displays:
+  - Points balance  
+  - Daily waste summary  
+  - Leaderboard position  
+  - Bar chart of daily waste (in grams)  
 
 ---
+
+### 3. Navigation Modules
+
+#### A. Marketplace (`/users/marketplace`)
+- Browse available products  
+- Select a product to purchase  
+
+- Purchase Flow:
+  - Check if user has enough points  
+    - If **No** → Show "Insufficient points" message  
+    - If **Yes** → Confirm purchase  
+  - Backend processes:
+    - Blockchain transfer  
+    - Database deduction  
+  - Result:
+    - Points deducted  
+    - Order saved  
+
+---
+
+#### B. Profile (`/users/profile`)
+- View profile details  
+
+- Wallet Connection:
+  - If wallet **not connected**:
+    - Show **Connect MetaMask** button  
+    - Open MetaMask popup  
+    - Save wallet address to profile  
+
+  - If wallet **already connected**:
+    - Display wallet address  
+    - Show Green Coin (GC) balance  
+
+---
+
+### 4. Summary Flow
+Student → Dashboard → View Stats → Navigate (Marketplace / Profile) → Perform Actions
+
+## Admin Dashboard Flow
+
+### 1. Admin Login
+- Admin logs in  
+- Redirected to **Admin Dashboard (`/`)**
+
+---
+
+### 2. Dashboard Overview
+- Displays:
+  - Total waste weight (all time)
+  - Waste collection chart (last 7 days)
+  - Notifications / security alerts  
+
+---
+
+### 3. Navigation Modules
+
+#### A. User Management (`/user-management`)
+- View all students:
+  - Roll numbers  
+  - Points  
+  - RFID UID status  
+
+- Click on a student:
+  - View individual waste chart  
+  - Assign RFID UID  
+  - Promote to admin  
+  - Delete account  
+
+---
+
+#### B. Dustbin Monitor (`/bin`)
+- View all bins:
+  - Bin name  
+  - Capacity  
+  - Current fill level  
+
+- Includes:
+  - Visual fill percentage indicator  
+
+---
+
+#### C. Marketplace (`/marketplace`)
+- View all products  
+- Add new product:
+  - Image  
+  - Price (in points)  
+
+- Delete existing products  
+
+---
+
+#### D. Transactions (`/transactions`)
+- View transaction logs  
+- Filter by:
+  - Reward transactions  
+  - Purchase transactions  
+
+- Details include:
+  - Transaction hash  
+  - Wallet address  
+  - Amount  
+  - Status  
+
+---
+
+### 4. Summary Flow
+Admin → Dashboard → Select Module → Perform Actions (User / Bin / Marketplace / Transactions)
 
 ### Marketplace Flow
 
