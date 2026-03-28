@@ -1,0 +1,117 @@
+.dashboard-admin {
+  .basic-data {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .analytics-data {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .analytics-chart {
+      width: 100%;
+      background-color: var(--color-neutral-0);
+      padding: 0.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    }
+
+    .analytics-dustbins {
+      width: 100%;
+      background-color: var(--color-neutral-0);
+      padding: 1rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+
+      h3 {
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 1rem;
+      }
+
+      .dustbin-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .dustbin-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .bin-icon {
+        width: 40px;
+        height: 40px;
+        background: #e6f4ea;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+      }
+
+      .bin-info {
+        flex: 1;
+        margin-left: 10px;
+
+        .bin-name {
+          font-size: 14px;
+          font-weight: 600;
+        }
+
+        .bin-location {
+          font-size: 12px;
+          color: #9ca3af;
+        }
+      }
+
+      .bin-status {
+        text-align: right;
+
+        p {
+          font-size: 13px;
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+
+        .bars {
+          display: flex;
+          gap: 3px;
+          justify-content: flex-end;
+
+          span {
+            width: 6px;
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 2px;
+          }
+
+          .active {
+            background: #22c55e;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-admin {
+    .analytics-data {
+      flex-direction: row;
+
+      .analytics-chart {
+        width: 50%;
+      }
+
+      .analytics-dustbins {
+        width: 50%;
+      }
+    }
+  }
+}

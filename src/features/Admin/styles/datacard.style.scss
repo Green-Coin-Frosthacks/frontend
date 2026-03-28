@@ -1,0 +1,92 @@
+.basic-data-card {
+  // Card Container
+  background: var(--color-neutral-0);
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+
+  // Soft, premium shadow
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.02);
+
+  transition: transform 0.2s ease;
+  width: 100%;
+  max-width: 390px; // Adjust based on your grid
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  // Icon Wrapper (The light gray square)
+  &>div:first-child {
+    background-color: #e9ecf2;
+    color: #6c757d;
+    min-width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.yellow {
+      background: #fff3cd;
+      color: #f59f00;
+    }
+
+    &.green {
+      background: #e6fcf5;
+      color: #2ecc71;
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  // Text Content Area
+  &>div:last-child {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      letter-spacing: -0.01em;
+    }
+
+    p:nth-of-type(1) {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    p:nth-of-type(2) {
+      // The Subtext (e.g., Total registered users)
+      margin: 0;
+      font-size: 0.85rem;
+      color: #7a7a7a;
+      font-weight: 400;
+      margin-top: 2px;
+    }
+  }
+}
+
+// Responsive adjustment for smaller screens
+@media (max-width: 480px) {
+  .basic-data-card {
+    padding: 1.2rem;
+    gap: 1rem;
+
+    &>div:last-child p:nth-of-type(1) {
+      font-size: 1.6rem;
+    }
+  }
+}

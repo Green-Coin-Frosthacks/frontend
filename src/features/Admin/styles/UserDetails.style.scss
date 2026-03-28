@@ -1,0 +1,151 @@
+.user-details-page {
+  background: var(--color-neutral-0);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  animation: fadeIn 0.3s ease-out;
+
+  .back-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 1.5rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #111827;
+    }
+  }
+
+  .profile-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+    background: #f8fafc;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    border: 1px solid #f1f5f9;
+
+    .avatar-large {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 700;
+      box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      flex: 1;
+
+      .info-card {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+
+        .label {
+          font-size: 0.85rem;
+          color: #64748b;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-weight: 600;
+        }
+
+        .value {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #0f172a;
+        }
+
+        .role-badge {
+          display: inline-block;
+          padding: 4px 12px;
+          border-radius: 999px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          text-transform: capitalize;
+          width: fit-content;
+
+          &.user { background: #dcfce7; color: #16a34a; }
+          &.admin { background: #dbeafe; color: #2563eb; }
+        }
+      }
+    }
+  }
+
+  .stats-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    .stat-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: translateY(-2px);
+      }
+
+      h4 {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #64748b;
+        font-weight: 500;
+      }
+
+      .stat-value {
+        margin: 0.5rem 0 0 0;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #0f172a;
+      }
+    }
+  }
+
+  .chart-section {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+
+    h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    .chart-subtitle {
+      margin: 0.25rem 0 1.5rem 0;
+      color: #64748b;
+      font-size: 0.9rem;
+    }
+
+    .chart-container {
+      width: 100%;
+      height: 350px;
+    }
+  }
+}
